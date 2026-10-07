@@ -1,0 +1,16 @@
+# local environment
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.cache/
+
+# large, unvalidated raw data (24 MB; the code that built it is absent)
+data/
+
+# third-party copyrighted PDFs -- not redistributed
+references/*.pdf
+
+# OS noise
+.DS_Store
+Thumbs.db
