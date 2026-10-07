@@ -1,3 +1,6 @@
+# Historical script, 18 May 2026. "Ghost in the Machine" was the project's
+# working title at that date. Run from the repository root:
+#     python references/_download.py
 """Download 15 recent arXiv PDFs (2021-2026) for the Ghost in the Machine project.
 
 Each entry: (arxiv_id, output_filename, short_topic).

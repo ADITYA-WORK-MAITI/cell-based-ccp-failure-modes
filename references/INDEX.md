@@ -8,6 +8,14 @@
 > author's disk and are not redistributed in this repository. Statements below
 > that a PDF is present in this folder refer to the author's local copy.
 >
+> Two notes, since the text below is unedited. "Ghost in the Machine" was the
+> project's working title in May 2026; the work is now titled *Two failure modes
+> in cell-based CCP estimation of dynamic discrete choice models*. And the
+> commands in the Reproducibility section at the end use absolute paths from the
+> author's May 2026 machine, which will not run anywhere else; from a clone of
+> this repository the equivalents are `python references/_download.py` and
+> `python references/_download_phase2.py`.
+>
 > The text below is preserved unedited.
 
 ---

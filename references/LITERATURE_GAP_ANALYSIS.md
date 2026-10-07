@@ -12,6 +12,8 @@
 > contribution is computational, not theoretical. See `docs/PROJECT_X_AUDIT.md`
 > Section 4 for the comparison, and `REPORT.md` for what is now claimed.
 >
+> "Ghost in the Machine" below was the project's working title in May 2026.
+>
 > The text below is preserved unedited. It records what the project believed in
 > May 2026.
 
