@@ -1,0 +1,15 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Aditya Maiti
+
+This licence covers the prose and figures in this repository. That is
+REPORT.md, the documents in docs/ and references/, and the generated figures
+in rebuild/out/.
+
+Source code is licensed separately under the MIT License. See LICENSE.
+
+The full legal text of CC BY 4.0 is published at
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+A plain-language summary is at
+https://creativecommons.org/licenses/by/4.0/

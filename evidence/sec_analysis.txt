@@ -1,0 +1,72 @@
+======================================================================
+SEC EDGAR ESTIMATION ANALYSIS
+======================================================================
+
+1. DATA SUMMARY
+----------------------------------------
+Total observations: 146,985
+Unique firms: 2,906
+Exits: 487 (0.33%)
+Maintain: 121,324 (82.54%)
+Growth: 25,174 (17.13%)
+
+2. CELL STATISTICS
+----------------------------------------
+Total cells K = 625
+Cells with n_k >= 100: 427
+Cells with n_k >= 50:  538
+Cells with n_k >= 10:  614
+Cells with n_k >= 1:   625
+Cells with n_k == 0:   0
+
+Exit counts per cell (n_k0):
+  Cells with n_k0 >= 1 (data-driven exit): 193
+  Cells with n_k0 == 0 (prior-dominated):  432
+
+3. WLS COEFFICIENTS
+----------------------------------------
+Coefficient      Maintain       Growth  Economic Interpretation
+---------------------------------------------------------------------------
+Intercept         -5.4446      -5.7901  Base utility level for each action
+LIQ                0.8353       1.4247  [M:+, G:+] +: high liquidity raises utility; firms prefer actions when cash-rich
+LEV               -0.0003      -0.0003  [M:-, G:-] -: high leverage penalises; indebted firms find continuation costly
+ROA                0.2741       0.2355  [M:+, G:+] +: profitable firms gain more from continuation
+SIZE               0.2300       0.1430  [M:+, G:+] +: larger firms have higher continuation value (economies of scale)
+
+4. IRL DISCREPANCY ON REAL DATA
+----------------------------------------
+Theoretical bounds: [0.5772, 24.0507]
+D range: [2.3132, 6.7865]
+D mean: 5.9550
+D std: 0.8011
+Bounds satisfied: True
+
+Cells with LARGEST D (lowest exit probability):
+   Cell        D    sigma_0     LIQ     LEV     ROA    SIZE    n_k
+    525   6.7865   0.000048   1.652   0.037  -3.238  14.872   2090
+    526   6.7748   0.000071   0.941   0.044  -0.840  17.546   1400
+    531   6.7718   0.000078   0.805   0.061  -0.118  17.702   1289
+    532   6.7660   0.000090   0.768   0.050  -0.106  19.154   1117
+    344   6.7528   0.000117   0.132   1.981   0.024  22.551    855
+
+Cells with SMALLEST D (highest exit probability):
+   Cell        D    sigma_0     LIQ     LEV     ROA    SIZE    n_k
+    179   2.3132   0.174603   0.045   0.798  -0.714  21.584      6
+    229   2.5854   0.132530   0.054 6768.059  -0.570  22.112      8
+     78   3.1539   0.074205   0.009   2.110  -0.360  20.621     28
+    109   3.4795   0.053040   0.011 6297.490  -0.083  22.419     77
+     84   3.5410   0.049759   0.010   2.107  -0.065  22.610     62
+
+5. DATA-DRIVEN vs PRIOR-DOMINATED COMPARISON
+----------------------------------------
+  Metric                  Data-driven  Prior-dominated
+  -------------------- -------------- ----------------
+  Mean u1 (Maintain)          -3.2230          -0.7784
+  Mean u2 (Growth)            -4.9994          -2.4270
+  Mean u1 - u2                 1.7764           1.6485
+  N cells                         193              432
+
+  Difference (DD - PD) in mean u1: -2.4446
+  Difference (DD - PD) in mean u2: -2.5725
+  => Utilities differ substantially between groups.
+     Laplace smoothing MAY distort results for prior-dominated cells.

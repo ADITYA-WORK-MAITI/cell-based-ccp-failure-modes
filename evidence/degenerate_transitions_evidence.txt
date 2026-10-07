@@ -1,0 +1,19 @@
+Degenerate transition evidence, extracted 5 October 2026 from
+the original project's sec_estimation.pkl (7.5 MB, retained privately, not published).
+
+This file exists so the central numbers in REPORT.md are auditable without
+the pickle. That file is declared invalid in WITHDRAWN_OUTPUTS.md.
+
+T[1]: shape (625, 625)
+  reachable columns (col mass > 1e-12) : 1
+  largest column index                 : 624
+  largest column share of total mass   : 1.000000
+  row sums all equal 1                 : True
+T[2]: shape (625, 625)
+  reachable columns (col mass > 1e-12) : 625
+  largest column index                 : 624
+  largest column share of total mass   : 0.995208
+  row sums all equal 1                 : True
+Z[:,0]: shape (625,), distinct values 1
+  value(s): 7.701230708570058
+  standard deviation across cells: 1.776e-15

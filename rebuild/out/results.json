@@ -1,0 +1,298 @@
+{
+  "generated_utc": "2026-10-04T13:07:48.157946+00:00",
+  "numpy_version": "2.5.3",
+  "euler_gamma": 0.5772156649015329,
+  "gate_1": {
+    "rows": [
+      {
+        "N": 500,
+        "n_obs": 7841,
+        "rmse_u1": 0.4597890870082255,
+        "rmse_u2": 0.35996651577312955,
+        "rmse_diff": 0.47436297504822866,
+        "n_prior_dominated": 10,
+        "n_fallback": {
+          "1": 0,
+          "2": 0
+        }
+      },
+      {
+        "N": 2000,
+        "n_obs": 30210,
+        "rmse_u1": 0.23853847646893614,
+        "rmse_u2": 0.12183831397800955,
+        "rmse_diff": 0.20989050351197025,
+        "n_prior_dominated": 0,
+        "n_fallback": {
+          "1": 0,
+          "2": 0
+        }
+      },
+      {
+        "N": 8000,
+        "n_obs": 121420,
+        "rmse_u1": 0.16032017225403924,
+        "rmse_u2": 0.10109061115153162,
+        "rmse_diff": 0.11073861319784267,
+        "n_prior_dominated": 0,
+        "n_fallback": {
+          "1": 0,
+          "2": 0
+        }
+      },
+      {
+        "N": 32000,
+        "n_obs": 482592,
+        "rmse_u1": 0.05478657853407939,
+        "rmse_u2": 0.050473995264984015,
+        "rmse_diff": 0.0396463390692599,
+        "n_prior_dominated": 0,
+        "n_fallback": {
+          "1": 0,
+          "2": 0
+        }
+      }
+    ],
+    "loglog_slope_rmse_u1": -0.48902497301017744,
+    "GATE_1_PASS": true
+  },
+  "gate_2": {
+    "materiality_threshold_pct": 10.0,
+    "exit_odds_error_pct_at_baseline": 75.65690251669011,
+    "GATE_2_PASS": true
+  },
+  "convention_wedge": [
+    {
+      "beta": 0.9,
+      "exit_margin_bias_utils": 0.5194940984113796,
+      "exit_odds_error_factor": 1.6811769244485724,
+      "exit_odds_error_pct": 68.11769244485724,
+      "observed_wedge": 0.5194940984113796,
+      "max_abs_deviation_from_prediction": 1.9984014443252818e-15,
+      "exit_margin_cross_state_sd": 1.010765597847401,
+      "wedge_over_spread": 0.5139610009657348
+    },
+    {
+      "beta": 0.95,
+      "exit_margin_bias_utils": 0.5483548816564562,
+      "exit_odds_error_factor": 1.7304039556984787,
+      "exit_odds_error_pct": 73.04039556984787,
+      "observed_wedge": 0.5483548816564562,
+      "max_abs_deviation_from_prediction": 1.887379141862766e-15,
+      "exit_margin_cross_state_sd": 1.0680168865456146,
+      "wedge_over_spread": 0.5134327823505216
+    },
+    {
+      "beta": 0.976,
+      "exit_margin_bias_utils": 0.5633624889438961,
+      "exit_odds_error_factor": 1.756569025166901,
+      "exit_odds_error_pct": 75.65690251669011,
+      "observed_wedge": 0.5633624889438961,
+      "max_abs_deviation_from_prediction": 2.9976021664879227e-15,
+      "exit_margin_cross_state_sd": 1.0228269228034905,
+      "wedge_over_spread": 0.5507896559857482
+    },
+    {
+      "beta": 0.99,
+      "exit_margin_bias_utils": 0.5714435082525176,
+      "exit_odds_error_factor": 1.770821402685145,
+      "exit_odds_error_pct": 77.0821402685145,
+      "observed_wedge": 0.5714435082525177,
+      "max_abs_deviation_from_prediction": 5.551115123125783e-15,
+      "exit_margin_cross_state_sd": 1.0685829755194498,
+      "wedge_over_spread": 0.5347675579191523
+    }
+  ],
+  "laplace_sensitivity": {
+    "realised_exit_rate": 0.0009999999999999996,
+    "rows": [
+      {
+        "alpha_L": 0.01,
+        "n_prior_dominated": 14,
+        "frac_prior_dominated": 0.4375,
+        "corr_Vhat_log_nk_prior_dominated": 0.5046432048329254,
+        "rmse_u1": 0.6399878903633964,
+        "rmse_diff": 0.19937453922136839
+      },
+      {
+        "alpha_L": 0.1,
+        "n_prior_dominated": 14,
+        "frac_prior_dominated": 0.4375,
+        "corr_Vhat_log_nk_prior_dominated": 0.5046374902069263,
+        "rmse_u1": 0.37166012886219635,
+        "rmse_diff": 0.12895464677770946
+      },
+      {
+        "alpha_L": 0.5,
+        "n_prior_dominated": 14,
+        "frac_prior_dominated": 0.4375,
+        "corr_Vhat_log_nk_prior_dominated": 0.5046120971727734,
+        "rmse_u1": 0.39102942040157096,
+        "rmse_diff": 0.13208941097780028
+      },
+      {
+        "alpha_L": 1.0,
+        "n_prior_dominated": 14,
+        "frac_prior_dominated": 0.4375,
+        "corr_Vhat_log_nk_prior_dominated": 0.5045803680515938,
+        "rmse_u1": 0.4451252801035915,
+        "rmse_diff": 0.14418815099883758
+      }
+    ]
+  },
+  "test_suite": {
+    "T1 reward-shift equivalence (Prop 1)": {
+      "status": "pass",
+      "detail": {
+        "max_abs_V_error": 5.329070518200751e-15
+      }
+    },
+    "T2 no constant shift under fixed anchor (Cor 1)": {
+      "status": "pass",
+      "detail": {
+        "D_min": 2.0517981449882106,
+        "D_max": 6.052437728926975,
+        "D_std": 1.0587781529887539,
+        "sigma0_std": 0.04060006195167548
+      }
+    },
+    "T3 continuation subproblem exact (Prop 4)": {
+      "status": "pass",
+      "detail": {
+        "expected": 24.050652704230515,
+        "max_abs_error": 8.042277954700694e-11
+      }
+    },
+    "T4 D constant iff exit prob invariant (Prop 5)": {
+      "status": "pass",
+      "detail": {
+        "calibrated_exit_level": 42.734500240907565,
+        "mean_sigma0_constant_case": 0.1000000000000001,
+        "mean_sigma0_varying_case": 0.11247136270413183,
+        "D_std_constant_case": 5.383074454725525e-15,
+        "D_std_varying_case": 0.358131915994016,
+        "D_range_varying": [
+          0.9514609939503913,
+          2.5877535606344395
+        ],
+        "ceiling_kappa_over_1mb": 11.544313298030646
+      }
+    },
+    "T5 convention wedge = -beta*kappa (Prop 3)": {
+      "status": "pass",
+      "detail": {
+        "beta_kappa": 0.5633624889438961,
+        "max_abs_err_wedge": 2.9976021664879227e-15,
+        "max_abs_err_V_shift": 7.771561172376096e-16,
+        "max_abs_err_within_continuation": 3.552713678800501e-15
+      }
+    },
+    "T6 GATE 1: recovery + consistency in N": {
+      "status": "pass",
+      "detail": {
+        "rows": [
+          {
+            "N": 500,
+            "n_obs": 7841,
+            "rmse_u1": 0.4597890870082255,
+            "rmse_u2": 0.35996651577312955,
+            "rmse_diff": 0.47436297504822866,
+            "n_prior_dominated": 10,
+            "n_fallback": {
+              "1": 0,
+              "2": 0
+            }
+          },
+          {
+            "N": 2000,
+            "n_obs": 30210,
+            "rmse_u1": 0.23853847646893614,
+            "rmse_u2": 0.12183831397800955,
+            "rmse_diff": 0.20989050351197025,
+            "n_prior_dominated": 0,
+            "n_fallback": {
+              "1": 0,
+              "2": 0
+            }
+          },
+          {
+            "N": 8000,
+            "n_obs": 121420,
+            "rmse_u1": 0.16032017225403924,
+            "rmse_u2": 0.10109061115153162,
+            "rmse_diff": 0.11073861319784267,
+            "n_prior_dominated": 0,
+            "n_fallback": {
+              "1": 0,
+              "2": 0
+            }
+          },
+          {
+            "N": 32000,
+            "n_obs": 482592,
+            "rmse_u1": 0.05478657853407939,
+            "rmse_u2": 0.050473995264984015,
+            "rmse_diff": 0.0396463390692599,
+            "n_prior_dominated": 0,
+            "n_fallback": {
+              "1": 0,
+              "2": 0
+            }
+          }
+        ],
+        "loglog_slope_rmse_u1": -0.48902497301017744,
+        "GATE_1_PASS": true
+      }
+    },
+    "T7 NaN discretisation defect regression": {
+      "status": "pass",
+      "detail": {
+        "original_unique_cells": 1,
+        "original_collapsed_index": 624,
+        "fixed_unique_cells": 624,
+        "nan_rows_flagged": 199
+      }
+    },
+    "T8 transition diagnostics catch degeneracy": {
+      "status": "pass",
+      "detail": {
+        "degenerate_reachable_columns": 1,
+        "healthy_reachable_columns": 60,
+        "rho_betaM_degenerate": 0.96624,
+        "rho_betaM_healthy": 0.96624,
+        "note": "rho(beta*M) < 1 in both cases: the original check could not detect this"
+      }
+    },
+    "T9 sparse-exit degradation reported": {
+      "status": "pass",
+      "detail": {
+        "rows": [
+          {
+            "target_exit_rate": 0.05,
+            "realised_exit_rate": 0.05000000000000013,
+            "n_prior_dominated_cells": 0,
+            "frac_prior_dominated": 0.0,
+            "rmse_u1": 0.08796979587835323,
+            "rmse_diff": 0.07567953825084478
+          },
+          {
+            "target_exit_rate": 0.01,
+            "realised_exit_rate": 0.010000000000000047,
+            "n_prior_dominated_cells": 1,
+            "frac_prior_dominated": 0.03125,
+            "rmse_u1": 0.19397793870642774,
+            "rmse_diff": 0.08782749462859536
+          },
+          {
+            "target_exit_rate": 0.001,
+            "realised_exit_rate": 0.0010000000000000059,
+            "n_prior_dominated_cells": 9,
+            "frac_prior_dominated": 0.28125,
+            "rmse_u1": 0.23234967781604848,
+            "rmse_diff": 0.08187787432877279
+          }
+        ]
+      }
+    }
+  }
+}

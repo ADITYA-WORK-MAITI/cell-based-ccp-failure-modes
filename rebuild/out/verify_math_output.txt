@@ -1,0 +1,113 @@
+==============================================================================
+A. The static model
+==============================================================================
+[PASS] A1 Gumbel(+0.0000,1) mean equals delta + gamma
+       deviation 7.397e-04   tolerance 2.0e-03   Monte Carlo, n=4e6
+[PASS] A1 Gumbel(-0.5772,1) mean equals delta + gamma
+       deviation 3.366e-04   tolerance 2.0e-03   Monte Carlo, n=4e6
+[PASS] A1 Gumbel(+1.7000,1) mean equals delta + gamma
+       deviation 2.291e-04   tolerance 2.0e-03   Monte Carlo, n=4e6
+[PASS] A2 max-stability: CDF of max matches Gumbel(delta + LSE(v), 1)
+       deviation 3.916e-04   tolerance 2.0e-03   sup-norm on CDF
+[PASS] A3 Lemma 0 (static): E[max] equals kappa + LSE(v)
+       deviation 7.303e-05   tolerance 2.0e-03   Monte Carlo, n=2e6
+[PASS] A4 logit formula: argmax frequencies match exp(v)/sum exp(v)
+       deviation 1.789e-04   tolerance 2.0e-03   Monte Carlo, n=2e6
+[PASS] A5 CH1 example: LSE(0,1,2) = 2.407606
+       deviation 3.556e-08   tolerance 5.0e-07
+[PASS] A5 CH1 example: E[max] = 2.984822
+       deviation 3.707e-07   tolerance 5.0e-07
+[PASS] A5 CH1 example: P = (0.090031, 0.244728, 0.665241)
+       deviation 4.711e-07   tolerance 5.0e-07
+[PASS] A5 CH1 example: ln P(1) - ln P(0) = u(1) - u(0)
+       deviation 2.220e-16   tolerance 1.0e-14
+==============================================================================
+B. The dynamic model
+==============================================================================
+[PASS] B0 guard: exit probability genuinely varies across states, so the constancy tests below are not vacuous
+       deviation 0.000e+00   tolerance 0.0e+00   sigma_0 spans [0.0354, 0.3894]
+[PASS] B1 Lemma 1: Lipschitz modulus of the Bellman operator does not exceed beta
+       deviation 0.000e+00   tolerance 1.0e-12   worst observed ratio 0.000000, beta 0.95
+[PASS] B2 (BE_kappa): fixed point satisfies V = kappa + LSE over actions
+       deviation 7.105e-15   tolerance 1.0e-12
+[PASS] B3 Proposition 1: V_0[u + kappa] equals V_kappa[u] pointwise
+       deviation 1.066e-14   tolerance 1.0e-11   the project's original Theorem 7.1 denied this
+[PASS] B3b Proposition 1: the two models induce identical CCPs
+       deviation 3.220e-15   tolerance 1.0e-12
+[PASS] B4 Corollary 1: D is NOT constant when u is held fixed and exit probability varies
+       deviation 0.000e+00   tolerance 0.0e+00   sd(D) = 0.123932, D spans [6.5635, 7.0231]
+[PASS] B5 Proposition 5: D satisfies the stated functional equation
+       deviation 7.105e-15   tolerance 1.0e-10
+[PASS] B5b Proposition 5: bounds gamma <= D(x) <= gamma/(1-beta)
+       deviation 0.000e+00   tolerance 1.0e-10   D in [6.5635, 7.0231], bracket [0.5772, 11.5443]
+[PASS] B6 Proposition 4: no terminal action gives a gap of exactly gamma/(1-beta)
+       deviation 5.151e-14   tolerance 1.0e-10   gamma/(1-beta) = 11.544313
+[PASS] B7a construction: exit probability is state invariant
+       deviation 3.532e-16   tolerance 1.0e-10   sigma_0 = 0.150000 everywhere
+[PASS] B7b Corollary 2: D is then constant
+       deviation 3.178e-15   tolerance 1.0e-09   D = 8.295269
+==============================================================================
+C. Inversion, recovery, and Proposition 3
+==============================================================================
+[PASS] C1 (INV): V equals anchor minus ln sigma(0|x) plus kappa
+       deviation 7.105e-15   tolerance 1.0e-11
+[PASS] C2 AM11 Lemma 1 form: V(x) - v(x,k) equals kappa - ln sigma(k|x) for every k
+       deviation 7.105e-15   tolerance 1.0e-11
+[PASS] C3 (TARGET)+(RECOVER): recovered continuation utilities equal the truth
+       deviation 8.771e-15   tolerance 1.0e-10   population CCPs, true transitions, no sampling error
+[PASS] C3b inversion reproduces the true value function
+       deviation 7.105e-15   tolerance 1.0e-11
+[PASS] C4a Proposition 3(a): V_kappa - V_0 equals kappa, constant in x
+       deviation 7.772e-16   tolerance 1.0e-12
+[PASS] C4b Proposition 3(b): recovered continuation utilities differ by exactly -beta*kappa
+       deviation 8.771e-15   tolerance 1.0e-12
+[PASS] C4c Proposition 3(c): the anchored exit utility is unchanged
+       deviation 0.000e+00   tolerance 0.0e+00   pinned by construction
+[PASS] C4d Proposition 3(d): differences among continuation actions are unchanged
+       deviation 1.066e-14   tolerance 1.0e-12
+[PASS] C4e Proposition 3(e): each action's gap to exit shifts by exactly -beta*kappa
+       deviation 8.771e-15   tolerance 1.0e-12
+[PASS] C5 Proposition 2 arm 1: holding the anchor makes utilities convention dependent
+       deviation 0.000e+00   tolerance 0.0e+00   shift = 0.548355 = beta*gamma = 0.548355
+[PASS] C5 Proposition 2 arm 2: invariance requires shifting the anchor by kappa
+       deviation 7.772e-16   tolerance 1.0e-14   Proposition 1 shifts every action, exit included
+[PASS] C6 published wedge table: beta*gamma, exp(beta*gamma), and error percentages
+       deviation 4.512e-05   tolerance 5.0e-05   all four rows of CH1 1.7.3 and RESULTS.md Gate 2
+[PASS] C6b gamma/(1-beta) at beta = 0.976 equals 24.050653
+       deviation 2.958e-07   tolerance 5.0e-07
+==============================================================================
+D. The two failure modes
+==============================================================================
+[PASS] D1 Laplace identity at n_k = 6: V = W + ln(n_k + A*aL) - ln(aL) + kappa
+       deviation 0.000e+00   tolerance 1.0e-12
+[PASS] D1 Laplace identity at n_k = 62: V = W + ln(n_k + A*aL) - ln(aL) + kappa
+       deviation 1.776e-15   tolerance 1.0e-12
+[PASS] D1 Laplace identity at n_k = 855: V = W + ln(n_k + A*aL) - ln(aL) + kappa
+       deviation 0.000e+00   tolerance 1.0e-12
+[PASS] D1 Laplace identity at n_k = 2090: V = W + ln(n_k + A*aL) - ln(aL) + kappa
+       deviation 1.776e-15   tolerance 1.0e-12
+[PASS] D1b published figure: cells of size 6 and 2090 differ by 5.8045 utils
+       deviation 1.324e-05   tolerance 5.0e-05
+[PASS] D1c published figure: -ln sigma(0|x) = 4.1431 at n_k = 6
+       deviation 3.473e-05   tolerance 5.0e-05
+[PASS] D1d published figure: -ln sigma(0|x) = 9.9476 at n_k = 2090
+       deviation 4.797e-05   tolerance 5.0e-05
+[PASS] D2 estimate_ccps matches (n_ka + aL)/(n_k + A*aL)
+       deviation 0.000e+00   tolerance 1.0e-15
+[PASS] D2b cells 0 and 1 have no observed exit, as the identity requires
+       deviation 0.000e+00   tolerance 0.0e+00
+[PASS] D3a np.percentile returns NaN edges when any row is NaN
+       deviation 0.000e+00   tolerance 0.0e+00
+[PASS] D3b the repaired path flags NaN rows instead of binning them
+       deviation 0.000e+00   tolerance 0.0e+00   196 rows flagged, 624 distinct cells among the rest
+[PASS] D3c the repaired path does not collapse the state space
+       deviation 0.000e+00   tolerance 0.0e+00   624 distinct cells
+[PASS] D4 spectral radius is nearly identical for degenerate and healthy transitions
+       deviation 0.000e+00   tolerance 0.0e+00   degenerate 0.94908 vs healthy 0.94960, so it is not a usable diagnostic
+[PASS] D4b transition_diagnostics DOES separate them
+       deviation 0.000e+00   tolerance 0.0e+00   reachable columns: degenerate 1, healthy 40
+[PASS] D5 one reachable column makes the continuation value constant across states
+       deviation 0.000e+00   tolerance 1.0e-12   this is why no reported number measured what it claimed
+==============================================================================
+49 passed, 0 failed, of 49
+==============================================================================

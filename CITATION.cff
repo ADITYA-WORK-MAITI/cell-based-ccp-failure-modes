@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Two failure modes in cell-based CCP estimation of dynamic discrete choice models"
+abstract: >-
+  Conditional choice probability inversion is a standard way to estimate dynamic
+  discrete choice models. One common implementation discretises a continuous
+  state space into cells, estimates choice probabilities and transitions by
+  counting within cells, and recovers flow utilities in closed form. This report
+  documents two failure modes of that implementation. Missing values in the
+  next-period state propagate through a percentile-based discretiser and collapse
+  every next-period observation into a single cell, which makes the continuation
+  value constant and removes the dynamics from the estimator. Additive smoothing
+  in cells with no observed instance of the reference action makes the estimated
+  value function a deterministic function of cell sample size. Both failures
+  passed 21 unit tests, a spectral radius check, and a sensitivity sweep over the
+  smoothing parameter. The report explains why each check passed, gives three
+  diagnostics that detect the failures, and supplies a corrected implementation.
+type: software
+authors:
+  - given-names: Aditya
+    family-names: Maiti
+    orcid: "https://orcid.org/0009-0004-2501-1459"
+keywords:
+  - dynamic discrete choice
+  - conditional choice probabilities
+  - inverse reinforcement learning
+  - reproducibility
+  - additive smoothing
+  - state discretisation
+license: MIT
+version: 1.0.0
+date-released: "2026-10-05"
+repository-code: "https://github.com/ADITYA-WORK-MAITI/ccp-failure-modes"
