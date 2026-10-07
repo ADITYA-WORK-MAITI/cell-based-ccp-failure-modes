@@ -30,7 +30,11 @@ TOP = (PAGE_H - MT) * 72
 BOT = MB * 72
 
 from matplotlib.font_manager import FontProperties, findfont  # noqa: E402
-from matplotlib.ft2font import FT2Font, LOAD_NO_HINTING  # noqa: E402
+try:  # matplotlib >= 3.10
+    from matplotlib.ft2font import FT2Font, LoadFlags  # noqa: E402
+    LOAD_NO_HINTING = LoadFlags.NO_HINTING
+except ImportError:  # matplotlib < 3.10
+    from matplotlib.ft2font import FT2Font, LOAD_NO_HINTING  # noqa: E402
 
 _FONTS = {}
 
