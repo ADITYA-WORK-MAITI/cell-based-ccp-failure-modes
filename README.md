@@ -3,6 +3,8 @@
 Aditya Maiti. Independent research, 2026.
 ORCID [0009-0004-2501-1459](https://orcid.org/0009-0004-2501-1459).
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23208936.svg)](https://doi.org/10.5281/zenodo.23208936)
+
 Conditional choice probability inversion is a standard way to estimate dynamic discrete choice models. One common implementation discretises the state space into cells and estimates choice probabilities and transitions by counting. This repository documents two failure modes of that implementation, both found in a working research codebase, and both of which passed every check the codebase contained.
 
 Read `REPORT.md` first.
@@ -107,6 +109,8 @@ work. They are not in this repository and are not covered by either licence.
 ## Cite
 
 Maiti, A. (2026). *Two failure modes in cell-based CCP estimation of dynamic discrete
-choice models* (v1.0.0). Zenodo.
+choice models* (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.23208936
 
-A DOI is minted on release and will be added here.
+`10.5281/zenodo.23208936` always resolves to the most recent version. The snapshot archived as
+v1.0.0 has its own DOI, `10.5281/zenodo.23208937`; cite that one if you need to pin a
+specific version.
